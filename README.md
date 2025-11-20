@@ -1,5 +1,7 @@
 # ai-dev-tools-zoomcamp
 
+![CI](https://github.com/RuiFSP/ai-dev-zoomcamp/actions/workflows/ci.yml/badge.svg)
+
 Course that helps use AI tools to write better code.
 
 Quick start (preferred `uv` workflow)

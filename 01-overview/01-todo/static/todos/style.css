@@ -1,0 +1,8 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin: 2rem; background: #fafafa; color: #111; }
+.todo { border-bottom: 1px solid #eee; padding: .6rem 0; }
+.done { color: #888; text-decoration: line-through; }
+form.inline { display: inline; }
+button { background: #0b5fff; color: white; border: none; padding: .35rem .6rem; border-radius: 4px; cursor: pointer; }
+button:hover { opacity: .95; }
+section { margin-bottom: 1.2rem; }
+input, textarea { padding: .4rem; border: 1px solid #ddd; border-radius: 4px; }
