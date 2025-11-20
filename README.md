@@ -85,3 +85,22 @@ uv run python3 01-overview/01-todo/manage.py test
 Notes:
 - `uv` creates and manages a per-project virtualenv and a lockfile. Commit `pyproject.toml` and `uv.lock` after adding dependencies.
 - If `uv` is unavailable, you can fall back to `python -m pip install <pkg>` and run `python3` directly, but `uv` is preferred for reproducibility.
+
+### Pre-commit hooks (lint + format)
+
+This repo uses `pre-commit` to automatically run Ruff (lint, auto-fix) and Black (format) before each commit.
+
+Setup locally:
+
+```bash
+# install pre-commit (single time)
+python -m pip install --upgrade pre-commit
+
+# install the git hook
+pre-commit install
+
+# run on all files once (recommended)
+pre-commit run --all-files
+```
+
+The hook uses pinned versions and will install tool environments automatically; no need to install Ruff/Black manually.
