@@ -27,6 +27,13 @@ What's the command you used for that?
 
 There could be multiple ways to do it. Put the one that AI suggested in the homework form.
 
+**Answer (example)**: I used the workspace package manager `uv` to install Django:
+
+```bash
+uv add django
+```
+(If `uv` is not available you can use `python -m pip install django`.)
+
 
 ## Question 2: Project and App
 
@@ -36,10 +43,13 @@ Follow the instructions from AI to do it. At some point, you will need to includ
 
 What's the file you need to edit for that?
 
-- `settings.py`
+- `settings.py` ✅
 - `manage.py`
 - `urls.py`
 - `wsgi.py`
+
+
+**Answer**: `settings.py` — register the app there (for example add `todos.apps.TodosConfig` to `INSTALLED_APPS`).
 
 
 ## Question 3: Django Models
@@ -50,20 +60,29 @@ For the TODO app, which models do we need? Implement them.
 
 What's the next step you need to take?
 
-- Run the application
-- Add the models to the admin panel
-- Run migrations
-- Create a makefile
+- `Run the application`
+- `Add the models to the admin panel`
+- `Run migrations` ✅
+- `Create a makefile`
+
+**Answer**: Run migrations. Example commands we used:
+
+```bash
+uv run python3 manage.py makemigrations
+uv run python3 manage.py migrate
+```
 
 
 ## Question 4. TODO Logic
 
 Let's now ask AI to implement the logic for the TODO app. Where do we put it? 
 
-- `views.py`
+- `views.py` ✅
 - `urls.py`
 - `admin.py`
 - `tests.py`
+
+**Answer**: `views.py` — put request handlers there (with URL routes in `urls.py`). The core request/response logic belongs in views; `urls.py` maps routes to views.
 
 
 ## Question 5. Templates
@@ -73,9 +92,22 @@ Next step is creating the templates. You will need at least two: the base one an
 Where do you need to register the directory with the templates? 
 
 - `INSTALLED_APPS` in project's `settings.py`
-- `TEMPLATES['DIRS']` in project's `settings.py`
+- `TEMPLATES['DIRS']` in project's `settings.py` ✅
 - `TEMPLATES['APP_DIRS']` in project's `settings.py`
 - In the app's `urls.py`
+
+**Answer**: `TEMPLATES['DIRS']` in the project's `settings.py` (or alternatively place templates under `your_app/templates/your_app/` and use `APP_DIRS=True`). In this project we added:
+
+```python
+TEMPLATES = [
+	{
+		'BACKEND': 'django.template.backends.django.DjangoTemplates',
+		'DIRS': [BASE_DIR / 'templates'],
+		'APP_DIRS': True,
+		...
+	}
+]
+```
 
 ## Question 6. Tests
 
@@ -90,9 +122,15 @@ Probably it will require a few iterations to make sure that tests pass and evert
 What's the command you use for running tests in the terminal? 
 
 - `pytest`
-- `python manage.py test`
+- `python manage.py test` ✅
 - `python -m django run_tests`
 - `django-admin test`
+
+**Answer**: `python manage.py test` (in this workspace we ran tests with the `uv` environment):
+
+```bash
+uv run python3 manage.py test
+```
 
 ## Running the app
 
