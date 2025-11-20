@@ -32,6 +32,20 @@ This file contains concise, actionable guidance for AI coding agents working in 
 
 - **When adding deps**: update `pyproject.toml` (add the dependency to `[project].dependencies`) and include a short PR note describing why the dependency is required. Avoid adding heavy infra without maintainer approval.
 
+- **Running commands with uv**: Prefer `uv run <command>` so execution happens inside the project environment (e.g., tests, scripts, Django manage tasks).
+
+	Examples:
+
+	```bash
+	# Django (Module 1)
+	uv run python3 01-overview/01-todo/manage.py runserver
+	uv run python3 01-overview/01-todo/manage.py test
+
+	# Pre-commit hooks
+	uv run pre-commit install
+	uv run pre-commit run --all-files
+	```
+
 
 4. Project-specific conventions and patterns
 - **Course content lives in module folders**: Each module (e.g., `01-overview/`, `02-snake/`, etc.) contains lesson plans, homework prompts, and example commands in markdown files (e.g., `01-overview/README_Module_1.md`). When making content edits, keep examples and shell snippets intact unless you verify them locally. Future modules may use different languages, frameworks, and test setups—refer to each module's README for details.
