@@ -3,9 +3,10 @@
 
 This file contains concise, actionable guidance for AI coding agents working in this repository. Focus on discoverable patterns and concrete file references so an agent can be productive immediately.
 
+
 1. Big picture
-- **Purpose**: This repo is a course / workshop repository (`ai-dev-zoomcamp`) containing learning modules and homework prompts. The codebase is small: a sample `main.py`, a `pyproject.toml`, and module content under `01-overview/`.
-- **Primary artifacts**: `main.py` (simple Python entry), `pyproject.toml` (project metadata, Python >=3.12.3), markdown course content in `01-overview/` (module notes and homework instructions).
+- **Purpose**: This repo is a course / workshop repository (`ai-dev-zoomcamp`) containing 6 learning modules and homework prompts. Each module has its own folder (e.g., `01-overview/`, `02-snake/`, etc.) and README. The codebase starts with a sample `main.py`, a `pyproject.toml`, and module content under `01-overview/`.
+- **Primary artifacts**: `main.py` (simple Python entry), `pyproject.toml` (project metadata, Python >=3.12.3), markdown course content in each module folder (e.g., `01-overview/README_Module_1.md`).
 
 2. How to run and verify small changes
 - **Run the sample program**: execute `main.py` directly: `python main.py` (ensure Python >= 3.12.3 to match `pyproject.toml`).
@@ -31,8 +32,9 @@ This file contains concise, actionable guidance for AI coding agents working in 
 
 - **When adding deps**: update `pyproject.toml` (add the dependency to `[project].dependencies`) and include a short PR note describing why the dependency is required. Avoid adding heavy infra without maintainer approval.
 
+
 4. Project-specific conventions and patterns
-- **Course content lives in `01-overview/`**: lesson plans, homework prompts and example commands are in markdown files such as `01-overview/README_Module_1.md` and `01-overview/homework01.md`. When making content edits, keep examples and shell snippets intact unless you verify them locally.
+- **Course content lives in module folders**: Each module (e.g., `01-overview/`, `02-snake/`, etc.) contains lesson plans, homework prompts, and example commands in markdown files (e.g., `01-overview/README_Module_1.md`). When making content edits, keep examples and shell snippets intact unless you verify them locally. Future modules may use different languages, frameworks, and test setups—refer to each module's README for details.
 - **Small, focused changes**: This repo is educational — prefer small edits (one file / one lesson) per change. For code additions, include a short usage example in the top-level `README.md` or the module README.
 
 5. Multi-file edits and PR guidance

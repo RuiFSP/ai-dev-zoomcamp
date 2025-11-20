@@ -1,3 +1,6 @@
+
+# CI for Module 1 (Django TODO app)
+# For future modules (React, FastAPI, n8n, etc.), extend this workflow with additional jobs and setup steps.
 name: CI
 
 on:

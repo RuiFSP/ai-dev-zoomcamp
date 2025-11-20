@@ -3,11 +3,13 @@
 {% block title %}Edit TODO{% endblock %}
 
 {% block content %}
-  <h2>Edit TODO: {{ todo.title }}</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-    <a href="{% url 'todos:index' %}">Cancel</a>
-  </form>
+  <section>
+    <div class="form-title">Edit TODO: {{ todo.title }}</div>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Save</button>
+      <a href="{% url 'todos:index' %}" style="margin-left: .7rem; color: #0b5fff; text-decoration: underline;">Cancel</a>
+    </form>
+  </section>
 {% endblock %}
