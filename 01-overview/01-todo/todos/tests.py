@@ -50,17 +50,19 @@ class TodoViewTests(TestCase):
         # Ensure index renders and shows form errors for empty title
         resp = self.client.get(reverse("todos:index"))
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, '<form')
+        self.assertContains(resp, "<form")
 
         # Post invalid (empty title) - ModelForm requires title, so it should not redirect
-        resp = self.client.post(reverse("todos:index"), {"title": "", "description": "x"})
+        resp = self.client.post(
+            reverse("todos:index"), {"title": "", "description": "x"}
+        )
         # Should return 200 and show form with errors
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, 'This field is required')
+        self.assertContains(resp, "This field is required")
 
     def test_template_content(self):
         # Create a todo and ensure it appears in the rendered template
-        t = Todo.objects.create(title="Template Test", description="Desc")
+        Todo.objects.create(title="Template Test", description="Desc")
         resp = self.client.get(reverse("todos:index"))
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, 'Template Test')
+        self.assertContains(resp, "Template Test")

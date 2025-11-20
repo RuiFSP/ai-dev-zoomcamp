@@ -90,17 +90,17 @@ Notes:
 
 This repo uses `pre-commit` to automatically run Ruff (lint, auto-fix) and Black (format) before each commit.
 
-Setup locally:
+Setup locally (using `uv`):
 
 ```bash
-# install pre-commit (single time)
-python -m pip install --upgrade pre-commit
+# add pre-commit to the project
+uv add pre-commit
 
 # install the git hook
-pre-commit install
+uv run pre-commit install
 
 # run on all files once (recommended)
-pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
-The hook uses pinned versions and will install tool environments automatically; no need to install Ruff/Black manually.
+The hook uses pinned versions and will install tool environments automatically; no need to install Ruff/Black manually. If `uv` is unavailable, you can fallback to `python -m pip install pre-commit` and drop the `uv run` prefix.
